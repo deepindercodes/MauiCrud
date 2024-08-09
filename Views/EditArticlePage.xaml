@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls ="clr-namespace:MauiCrud.Views.Controls"
+             x:Class="MauiCrud.Views.EditArticlePage"
+             Title="Edit Article">
+    <controls:ArticleControl x:Name="ctrlEditArticle" onSave="ctrlEditArticle_onSave" onCancel="ctrlEditArticle_onCancel" onError="ctrlEditArticle_onError"></controls:ArticleControl>
+
+</ContentPage>

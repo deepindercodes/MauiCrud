@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiCrud.Views.ArticlesPage"
+             Title="CRUD">
+    <ScrollView>
+        <VerticalStackLayout>
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="2" Margin="5">
+                <Button x:Name="btnAdd" Grid.Column="2" Text="Add Article" Clicked="btnAdd_Clicked" />
+            </Grid>
+            <ListView
+                x:Name="listArticles"
+                BackgroundColor="Transparent"
+                RowHeight="65"
+                ItemSelected="listArticles_ItemSelected"
+                ItemTapped="listArticles_ItemTapped"
+                >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding articletitle}" Detail="{Binding articleauthor, StringFormat='Author : {0}'}">
+                            <TextCell.ContextActions>
+                                <MenuItem Text="Edit" Clicked="MenuItem_Clicked_Edit" CommandParameter="{Binding .}"></MenuItem>
+                                <MenuItem Text="Delete" IsDestructive="True" CommandParameter="{Binding .}" Clicked="MenuItem_Clicked_Delete"></MenuItem>
+                            </TextCell.ContextActions>
+                        </TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

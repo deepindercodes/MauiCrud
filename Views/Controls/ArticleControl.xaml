@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit ="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="MauiCrud.Views.Controls.ArticleControl">
+    <ScrollView>
+        <VerticalStackLayout Spacing="10" Margin="20,20,20,0">
+
+            <Frame Padding="10,2,10,2">
+                <HorizontalStackLayout>
+                    <Label x:Name="lblArticleTitle" VerticalOptions="Center" Text="Title" Margin="0,0,20,0"></Label>
+                    <Entry x:Name="entryArticleTitle" VerticalOptions="Center"  HorizontalOptions="FillAndExpand">
+                        <Entry.Behaviors>
+                            <toolkit:TextValidationBehavior
+                                x:Name="validateArticleTitle"
+                                Flags="ValidateOnAttaching,ValidateOnValueChanged"
+                                MinimumLength="1"
+                                ></toolkit:TextValidationBehavior>
+                        </Entry.Behaviors>
+                    </Entry>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame Padding="10,2,10,2">
+                <HorizontalStackLayout>
+                    <Label x:Name="lblArticleAuthor" VerticalOptions="Center" Text="Author" Margin="0,0,10,0"></Label>
+                    <Entry x:Name="entryArticleAuthor" VerticalOptions="Center"  HorizontalOptions="FillAndExpand">
+                        <Entry.Behaviors>
+                            <toolkit:TextValidationBehavior
+                                x:Name="validateArticleAuthor"
+                                Flags="ValidateOnAttaching,ValidateOnValueChanged"
+                                MinimumLength="1"
+                                ></toolkit:TextValidationBehavior>
+                        </Entry.Behaviors>
+                    </Entry>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame Padding="10,2,10,2">
+                <HorizontalStackLayout>
+                    <Label x:Name="lblArticleBody" VerticalOptions="Start" Text="Body" Margin="0,0,10,0"></Label>
+                    <Editor x:Name="entryArticleBody" VerticalOptions="Center" HeightRequest="100" HorizontalOptions="FillAndExpand">
+                        <Editor.Behaviors>
+                            <toolkit:TextValidationBehavior
+                                x:Name="validateArticleBody"
+                                Flags="ValidateOnAttaching,ValidateOnValueChanged"
+                                MinimumLength="1"
+                                ></toolkit:TextValidationBehavior>
+                        </Editor.Behaviors>
+                    </Editor>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame Padding="10,2,10,2">
+                <HorizontalStackLayout>
+                    <Label x:Name="lblArticleImage" VerticalOptions="Start" Text="Image" Margin="0,0,10,0"></Label>
+                    <Button x:Name="btnUploadArticleImage" Text="Pick image"
+                        Clicked="btnUploadArticleImage_Clicked" />
+
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Label x:Name="lblArticleImageText" Padding="10" IsVisible="Hidden" />
+            <Label x:Name="lblArticleImageBase64Data" Padding="10" IsVisible="Hidden" />
+            <Image x:Name="imgArticleImage" HorizontalOptions="Center" HeightRequest="100" />
+
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="4">
+                <Button x:Name="btnSave" Text="Save" Clicked="btnSave_Clicked" />
+                <Button x:Name="btnCancel" Grid.Column="1" Text="Cancel" Clicked="btnCancel_Clicked" />
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+
+</ContentView>

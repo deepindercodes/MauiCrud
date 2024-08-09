@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiCrud.Views.ViewArticlePage"
+             Title="View Article">
+    <ScrollView>
+        <VerticalStackLayout Spacing="10" Margin="20,20,20,0">
+
+            <Frame Padding="10,2,10,2">
+                <HorizontalStackLayout>
+                    <Label x:Name="lblArticleTitle" VerticalOptions="Center" Text="Title" Margin="0,0,20,0" Padding="5"></Label>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame Padding="10,2,10,2">
+                <HorizontalStackLayout>
+                    <Label x:Name="lblArticleAuthor" VerticalOptions="Center" Text="Author" Margin="0,0,10,0" Padding="5"></Label>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame Padding="10,2,10,2" x:Name="frameimage" IsVisible="False">
+                <Image x:Name="imgArticleImage" HorizontalOptions="Center" HeightRequest="100" />
+            </Frame>
+
+            <Frame Padding="10,2,10,2">
+                <HorizontalStackLayout>
+                    <Label x:Name="lblArticleBody" VerticalOptions="Start" Text="Body" Margin="0,0,10,0" Padding="5"></Label>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame Padding="10,2,10,2">
+                <HorizontalStackLayout>
+                    <Label x:Name="lblArticleTimeStamp" VerticalOptions="Start" Text="Body" Margin="0,0,10,0" Padding="5"></Label>
+                </HorizontalStackLayout>
+            </Frame>
+
+            
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
